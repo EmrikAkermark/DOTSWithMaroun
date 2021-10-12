@@ -1,5 +1,4 @@
 using Unity.Entities;
-using Unity.Entities.CodeGeneratedJobForEach;
 using Unity.Jobs;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -12,7 +11,6 @@ public class MovingCubes : JobComponentSystem
         return Entities.WithName("MovingCubes").ForEach(
             (ref Translation transform, in Rotation rotation) =>
             {
-                
                 transform.Value += 0.01f * math.forward(rotation.Value) ;
             }).Schedule(inputDeps);
     }

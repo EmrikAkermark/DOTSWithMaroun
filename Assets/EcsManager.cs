@@ -18,7 +18,7 @@ public class EcsManager : MonoBehaviour
         for (var i = 0; i < numberOfObjects; i++)
         {
             Entity instance = _entityManager.Instantiate(newEntityConversion);
-            Vector3 myPosition = new Vector3(UnityEngine.Random.Range(-100, 100), 0, UnityEngine.Random.Range(-100, 100));
+			Vector3 myPosition = new Vector3(Random.Range(-100, 100), 0, UnityEngine.Random.Range(-100, 100));
             _entityManager.SetComponentData(instance,new Translation(){Value = myPosition});
             _entityManager.SetComponentData(instance,new Rotation(){Value = transform.rotation});
 
